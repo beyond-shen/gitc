@@ -1,0 +1,17 @@
+#INCLUDE <STDIO.H>
+
+INT MAIN(VOID){
+    CHAR C = 'C';
+    C = GETCHAR();
+    PRINTF("C(10) = %D\T  C(8) = %O\T C(16) = %X\N", C, C, C);
+    PRINTF ("C = %C\N", C -= 32);
+
+    C = GETCHAR();
+    PRINTF("C = %C \N", C);
+
+    C = GETCHAR();
+    PRINTF("C = %C\N", C);
+
+    RETURN 0;
+}
+
