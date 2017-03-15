@@ -93,6 +93,7 @@ or
 3. $ git checkout hello.c
 ```
 ![](http://p1.bpimg.com/1949/da987f5f36d5655bs.png)
+
 2. 从版本库里删除文件。（真正的删除文件）
 ```sh
 1. $ git rm hello.c (or) rm hello.c
@@ -100,9 +101,13 @@ or
 3. $ git add .
 4. $ git commit
 ```
-3. git diff commitId-1 commitId-2
+3. 修改文件状态
+
 ![](http://i1.piimg.com/1949/be9c5d8c57195fdds.png)
+
 git diff 本身只显示尚未暂存的改动，而不是自上次提交以来所做的所有改动。 所以有时候你一下子暂存了所有更新过的文件后，运行 git diff 后却什么也没有，就是这个原因。
+
+4. git diff commitId-1 commitId-2
 
 ![](http://i1.piimg.com/1949/e28f65d9578ce778s.png)
 @@-2，6 +2，7@@
