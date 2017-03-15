@@ -102,6 +102,7 @@ or
 ```
 3. git diff commitId-1 commitId-2
 ![](http://i1.piimg.com/1949/be9c5d8c57195fdds.png)
+git diff 本身只显示尚未暂存的改动，而不是自上次提交以来所做的所有改动。 所以有时候你一下子暂存了所有更新过的文件后，运行 git diff 后却什么也没有，就是这个原因。
 
 ![](http://i1.piimg.com/1949/e28f65d9578ce778s.png)
 @@-2，6 +2，7@@
