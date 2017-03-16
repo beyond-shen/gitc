@@ -93,14 +93,14 @@ ret为1时显示错误信息并关闭数据库。
 ```c
 	while (1)
 	{
-		printf("\e[32m*** 1:insert  2:delete  3:show  4:update  5:quit ***\e[0m\n");
-		printf("please input your comd > ");
+		printf("\e[32m*** 1:insert  2:delete  3:show  4:update  5:quit ***\e[0m\n"); 		
+		printf("please input your cmd > ");
 
-		if (scanf("%d", &cmd) != 1)
+		if (scanf("%d", &cmd) != 1)   //  从输入流读入数的数量不是1个时，
 		{
-			puts("input error");
-			fgets(clean, sizeof(clean), stdin);
-			continue;
+		     puts("input error");    // 输出错误
+	             fgets(clean, sizeof(clean), stdin); //		
+		     continue;
 		}
 
 		switch (cmd)
@@ -130,3 +130,4 @@ RET:
 	return 0;
 }
 ```
+**思路**：用while完成了死循环操作，
