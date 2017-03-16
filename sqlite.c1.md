@@ -75,8 +75,7 @@ int do_update(sqlite3 *db);                                        //
 		}
 	}
 ```
-**思路**:使用if语句进行判断，当用sqlite3_exec（）函数执行sql语句的返回值ret为0时，成功执行sql语句并执行回调函数（此处无回调函数）。返回值ret不为0时执行if语句内容且当
-ret为1时显示错误信息并关闭数据库。
+**思路**:使用if语句进行判断，当用sqlite3_exec（）函数执行sql语句的返回值ret为0时，成功执行sql语句并执行回调函数（此处无回调函数）。返回值ret不为0时执行if语句内容且当ret为1时显示错误信息并关闭数据库。
 **知识点**：
   * sqlite3_exec函数的使用：
   
@@ -93,18 +92,19 @@ ret为1时显示错误信息并关闭数据库。
 ```c
 	while (1)
 	{
-		printf("\e[32m*** 1:insert  2:delete  3:show  4:update  5:quit ***\e[0m\n"); 		
+		printf("\e[32m*** 1:insert  2:delete  3:show  4:update  5:quit ***\e[0m\n"); 	
+		// 变色输出操作
 		printf("please input your cmd > ");
 
 		if (scanf("%d", &cmd) != 1)   //  从输入流读入数的数量不是1个时，
 		{
 		     puts("input error");    // 输出错误
-	             fgets(clean, sizeof(clean), stdin); //		
-		     continue;
+	             fgets(clean, sizeof(clean), stdin);
+		     //从输入流中每次读取sizeof（clean）长度的字节存放在clean中，目的是将输入流清空
+		     continue; // 继续循环
 		}
 
-		switch (cmd)
-		{
+		switch (cmd)             //根据输入的数字进行跳转操作
 		case 1:
 			do_insert(db);
 			break;
@@ -118,16 +118,16 @@ ret为1时显示错误信息并关闭数据库。
 		case 4:
 			do_update(db);
 			break;
-		case 5:
+		case 5:                   // 5的跳转到结束语句
 			goto RET;
-		default:
+		default:                  //其他值时跳转结束
 			break;
 		}
 	}
 
-RET:
+RET:                                      //关闭数据库，结束操作
 	sqlite3_close(db);
 	return 0;
 }
 ```
-**思路**：用while完成了死循环操作，
+**思路**：用while完成了死循环操作，在循环中执行了从输入流读数，并根据数字进行跳转到相关函数的的操作。如果从输入流读取的数字个数不是1个，进行清零并继续循环
