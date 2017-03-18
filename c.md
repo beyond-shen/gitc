@@ -138,10 +138,24 @@ int main(void){
   return 0;
 }
 ```
-### 三目运算符
+#### 三目运算符
 表达式1 ？| 表达式2 | ： | 表达3
 --------|-------|-----|-----
  逻辑判断 |  真值   | --- |  假值
  
  **特殊使用**：
  ![](http://p1.bpimg.com/1949/fa0f96fb1e78c921s.png)
+ 
+####  布尔值：
+可用flag来存储真假值：
+flag = TRUE；
+flag = FLASE； 
+
+### switch语句
+![](http://p1.bpimg.com/1949/3951595d6a2d904as.png)  
+
+![](http://p1.bpimg.com/1949/f21c3f9d0225b166s.png)
+
+1. 用switch语句显示法定格式的日期
+
+![](http://p1.bpimg.com/1949/314127269f2a0d87s.png)
