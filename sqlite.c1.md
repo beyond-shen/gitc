@@ -41,7 +41,7 @@ int do_update(sqlite3 *db);                                        //
 	if (sqlite3_open("./my.db", &db) != SQLITE_OK)         //文件的路径为./my.db
   {
 		printf("%s\n", sqlite3_errmsg(db));
-		return -1;
+		return -1;                            // 有两种情况是返回-1的：一种是程序出错，另一种就是使用了终止符EOF
 	}
  ```
  **思路**：使用if语句。当用sqlite3_open函数打开名为my.db的数据库，返回值为0时证明打开数据库成功（如果没有该数据库那就创建新的数据库。）当返回值不为0时执行
