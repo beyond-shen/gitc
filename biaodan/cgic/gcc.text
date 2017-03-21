@@ -1,0 +1,5 @@
+/*±‡“Î±‡“Î∑Ω Ω*/
+1. make
+2. gcc -g -Wall -c -o my.o my.c
+   gcc my.o -o my.cgi -L./ -lcgic (-lsqlite3)
+   sudo cp my.cgi /usr/lib/cgi-bin/
