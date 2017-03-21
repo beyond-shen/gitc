@@ -67,7 +67,7 @@ int do_update(sqlite3 *db);                                        //
 	if ((ret = sqlite3_exec(db, "create table stu(id integer, name vchar(32) not null,\
 		score integer not null)", NULL, NULL, &errmsg)) != SQLITE_OK)
 	{
-		if (ret == 1)
+		if (ret != 1)
 		{
 			printf("%s\n", errmsg);
 			sqlite3_close(db);
@@ -75,7 +75,7 @@ int do_update(sqlite3 *db);                                        //
 		}
 	}
 ```
-**思路**:使用if语句进行判断，当用sqlite3_exec（）函数执行sql语句的返回值ret为0时，成功执行sql语句并执行回调函数（此处无回调函数）。返回值ret不为0时执行if语句内容且当ret为1时显示错误信息并关闭数据库。
+**思路**:使用if语句进行判断，当用sqlite3_exec（）函数执行sql语句的返回值ret为0时，成功执行sql语句并执行回调函数（此处无回调函数）。返回值ret不为0时执行if语句内容且当ret为1时表示文件存在，其他ret值时显示错误信息并关闭数据库。
 **知识点**：
   * sqlite3_exec函数的使用：
   
