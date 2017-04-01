@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<meta charset = "UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script type="text/javascript" src="file:///C|/Users/hp/Documents/JQuerySite/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+function calculate(type){
+var result=0;
+num1=Number(document.form1.num1.value);
+num2=Number(document.form1.num2.value);
+if(num1==""||num2==""){return false;}
+switch (type)
+{
+case 0:
+result=num1+num2;
+break;
+case 1:
+result=num1-num2;
+break;
+case 2:
+result=num1*num2;
+break;
+case 3:
+result=num1/num2;
+break;
+}
+document.form1.textfield3.value=result;
+}
+</script>
+<title>无标题文档</title>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+<input type="text" name="num1" />
+<select name="select" size="1" id="select">
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="*">*</option>
+<option value="/">/</option>
+</select>
+<input type="text" name="num2" />
+=
+<input type="text" name="textfield3" />
+<input name="circulate" type="button" id="circulate" value="submit" onclick="calculate(document.form1.select.selectedIndex)" />
+</form>
+</body>
+</html>
