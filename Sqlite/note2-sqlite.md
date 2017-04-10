@@ -73,3 +73,4 @@
 ```
     sqlite> alter table oldname rename to newname;
 ```
+　
